@@ -1,0 +1,25 @@
+int main() {
+   char mtx[4][MAX_COLS] = {{'^', '^','+','+' }, {'=','^','+','o'}, {'=','^','^','o'}, {'=','=','o','o'}};
+   BPGame * b = bp_create_from_mtx(mtx, 4, 4);
+   bp_pop(b,0,0);
+   bp_display(b);
+   bp_float_one_step(b);
+   bp_display(b);
+   bp_pop(b, 0,0);
+   bp_display(b);
+   bp_undo(b);
+   bp_display(b);
+   bp_pop(b, 0,0);
+   bp_pop(b, 1,0);
+   bp_pop(b, 0,2);
+   /*
+   while(!bp_is_compact(b)) {
+      bp_float_one_step(b);
+   } */
+   //bp_pop(b,2,3);
+   //bp_display_STD(b);
+   
+
+
+   return 0;
+}
